@@ -10,24 +10,39 @@ and open the template in the editor.
         <title>Login</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body>
+    <body class="bg-secondary">
 
-        <div class="container">
+        <div class="container-fluid">
+            
+            <nav class="navbar navbar-expend-lg bg-danger">
+                <h1 class="nav text-light">MENU</h1>
+                
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Cadastrar</a>
+                    </li>
+                </ul>
+            </nav>
+            
             <div class="row">
                 <div class="col-xl-6">
-                    <form>
+                <form>
                         <div class="form-group">
-                            <label><h3>Login</h3></label>
-                            <input type="text" name="usuario" class="form-control form-control-lg" >
+                            <br>
+                            <input type="text" name="usuario" class="form-control form-control-lg" placeholder="USUARIO">
                         </div>                    
                 </div>
                 <div class="col-xl-6">
-                    <label><h3>Senha</h3></label>
-                    <input type="password" name="senha" class="form-control form-control-lg">
+                    <br>
+                    <input type="password" name="senha" class="form-control form-control-lg" placeholder="SENHA">
                 </div>
-                <input type="submit" class="btn btn-outline-primary btn-block btn-lg" name="enviar" value="ENTRAR"> 
-                </form>
             </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="Entrar"> 
+                </div>
+            </div>
+                </form>
         </div>
 
     </div>
