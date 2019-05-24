@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+    <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <body class="bg-secondary">
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-expend-lg bg-danger">
+                <h1 class="nav text-light">MENU</h1>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Ja sou cadastrado</a>
+                    </li>
+                </ul>
+            </nav>
+
+            
+            <form class="form-group" action="cadastro.php" method="POST">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <br>
+                            <input type="text" name="nome" class="form-control form-control-lg" placeholder="Primeiro nome">
+                        </div>
+                    
+                        <div class="col-xl-6">
+                            <br>
+                            <input type="text" name="user" class="form-control form-control-lg" placeholder="Nome de Usuario" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <br>
+                            <input type="password" name="senha" class="form-control form-control-lg" placeholder="Senha">
+                        </div>
+                        
+                        <div class="col-xl-6">
+                            <br>
+                            <input type="password" name="Senha2" class="form-control form-control-lg" placeholder="Confirmação de senha">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <br>
+                            <input type="submit" name="cadastro" class="btn btn-primary btn-block btn-lg" value="Cadastrar">
+                        </div>
+                    </div>
+
+                </form>    
+        </div>
+    </body>
+</html>
