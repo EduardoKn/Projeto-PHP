@@ -13,20 +13,20 @@ and open the template in the editor.
     <body class="bg-secondary">
 
         <div class="container-fluid">
-            
+
             <nav class="navbar navbar-expend-lg bg-danger">
                 <h1 class="nav text-light">MENU</h1>
-                
+
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Cadastrar</a>
                     </li>
                 </ul>
             </nav>
-            
+
             <div class="row">
                 <div class="col-xl-6">
-                <form>
+                    <form action="index.php" method="POST">
                         <div class="form-group">
                             <br>
                             <input type="text" name="usuario" class="form-control form-control-lg" placeholder="USUARIO">
@@ -42,12 +42,29 @@ and open the template in the editor.
                     <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="Entrar"> 
                 </div>
             </div>
-                </form>
-        </div>
-
+        </form>
     </div>
-    <?php
-    // put your code here
-    ?>
+
+</div>
+<?php
+// put your code here
+
+$login = $_POST['usuario'];
+$lsenha = $_POST['senha'];
+
+$base = 'localhost';
+$usuario = 'adm';
+$senha = 'Trava*1597';
+$banco = 'projeto';
+
+$conecta = new mysqli($base, $usuario, $senha, $banco);
+
+if($conecta->connect_error){
+    die("A conexão falhou ".$conecta->connect_error."<br>");
+}
+echo 'Conexão realizada com sucesso!';
+
+$conecta->close();
+?>
 </body>
 </html>
