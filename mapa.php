@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
+<?php
+
+include("classes/checksessao.php");
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
 
         <title>Location</title>
-        <?php
-        // put your code here
-        session_start();
-
-        if ((!isset($_SESSION['login'])==TRUE) and ( !isset($_SESSION['senha'])==TRUE)) {
-            session_unset();
-            echo "<script>"
-            . "alert('Somente usuario logado!');"
-            . "window.location.href= 'index.html';"
-            . "</script>";
-        }
-        $logado = $_SESSION['login'];
-        ?>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body class="bg-secondary">
+    <body>
         <div class="container-fluid">
-
-            <nav class="navbar navbar-expend-lg bg-danger">
+            <div class="interface">
+            <nav class="navbar navbar-expend-lg bg-info">
                 <h1 class="nav text-light">MENU</h1>
 
                 <ul class="nav nav-pills">
@@ -36,8 +25,19 @@ and open the template in the editor.
                     </li>
                 </ul>
             </nav>
+            
+            <div class="row">
+                <div class="col-xl-12">
+                        <iframe
+                            width="100%"
+                            height="700"
+                            frameborder="0" style="border: 0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDgVdHPQA91pG5EpHv0IJG1LXEQzPQOsQ4&q=Brasilia+DF" allowfullscreen>
+                        </iframe>
 
-            SOMENTE USUARIO LOGADO
+                </div>
+            </div>
+            </div>
         </div>
     </body>
 </html>

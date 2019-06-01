@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/05/2019, 22:51:49
+    Author     : guikartman
+*/
+
+.interface{
+    width:50%;
+    margin: 5% auto;
+    border:1px solid black;
+    background-color: #696969;
+    border-radius: 5px;
+}
+
+body{
+    background: url("imagem/tela.jpg")no-repeat;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.espaco{height: 10px; display: block;}
+

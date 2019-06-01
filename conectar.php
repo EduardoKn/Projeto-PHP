@@ -7,19 +7,10 @@
  */
 session_start();
 
+include("classes/conexaobd.php");
+
 $login = $_POST['usuario'];
 $lsenha = $_POST['senha'];
-
-$base = 'localhost';
-$usuario = 'adm';
-$senha = 'Trava*1597';
-$banco = 'projeto';
-
-$conecta = new mysqli($base, $usuario, $senha, $banco);
-
-if ($conecta->connect_error) {
-    die("A conexão falhou " . $conecta->connect_error . "<br>");
-}
 
 $sql = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$lsenha' ";
 
@@ -33,7 +24,7 @@ if ($resultado->num_rows > 0) {
     session_destroy();
     echo "<script>"
     . "alert('Login ou senha incorretos');"
-    . "window.location.href = 'index.html'"
+    . "window.location.href = 'index.php'"
     . "</script>";
 }
 
