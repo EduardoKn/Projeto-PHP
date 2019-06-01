@@ -1,7 +1,7 @@
 <?php
 
 include("classes/conexaobd.php");
-include("classes/checksessao.php");
+include("classes/checksessaoadm.php");
 
 if (isset($_POST['confirmar'])) {
 

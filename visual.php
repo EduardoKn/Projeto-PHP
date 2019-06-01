@@ -1,7 +1,7 @@
 <?php
 
     include("classes/conexaobd.php");
-    include ("classes/checksessao.php");
+    include ("classes/checksessaoadm.php");
 
     $sql_code = "SELECT * FROM usuario";
     $sql_query = $conecta->query($sql_code) or die($conecta->error);

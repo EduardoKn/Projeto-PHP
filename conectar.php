@@ -24,8 +24,8 @@ if ($sql_query->num_rows > 0) {
     echo "<script>location.href='mapa.php'</script>";
 
 } else if ($sql_query2->num_rows > 0) {
-    $_SESSION['login'] = $login;
-    $_SESSION['senhac'] = $lsenha;
+    $_SESSION['loginadm'] = $login;
+    $_SESSION['senhad'] = $lsenha;
     echo "<script>location.href='visual.php'</script>";
     
 } else {

@@ -1,6 +1,6 @@
 <?php
 include("classes/conexaobd.php");
-include("classes/checksessao.php");
+include("classes/checksessaoadm.php");
 
 if (!isset($_GET["usr"])) {
     echo "<script> alert('Codigo invalido.'); window.location.href='visual.php'</script>";
