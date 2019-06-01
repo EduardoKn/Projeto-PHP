@@ -35,20 +35,10 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-xl-12">
                             <br>
-                            <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="Entrar"> 
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="Log in"> 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <br><br><br>
-                            <p class="text-sm-center text-monospace text-light">Ainda não possui cadastro?</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <a class="btn btn-danger" href="cadastra.php">Cadastrar</a>
-                        </div>
-                    </div>
+
 
                 </form>
             </div>

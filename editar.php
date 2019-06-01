@@ -1,5 +1,6 @@
 <?php
 include("classes/conexaobd.php");
+include("classes/checksessao.php");
 
 if (!isset($_GET["usr"])) {
     echo "<script> alert('Codigo invalido.'); window.location.href='visual.php'</script>";
@@ -51,7 +52,6 @@ if (!isset($_GET["usr"])) {
 
         if (count($erro) == 0) {
 
-            $senha = md5(md5($_SESSION['senha']));
 
             $sql_code2 = "UPDATE usuario SET
                 nome = '$_SESSION[nome]',
@@ -59,7 +59,7 @@ if (!isset($_GET["usr"])) {
                 login = '$_SESSION[usuario]',
                 email = '$_SESSION[email]',
                 sexo = '$_SESSION[sexo]',
-                senha = '$senha',
+                senha = '$_SESSION[senha]',
                 niveldeacesso = '$_SESSION[niveldeacesso]'
                 WHERE codigo = '$usu_codigo'";
 
@@ -189,19 +189,10 @@ if (!isset($_GET["usr"])) {
                         </div>
 
                         <div class="row">
-                            <div class="col-xl-12">
-                                <input type="submit" name="confirmar" class="btn btn-primary btn-block btn-lg" value="Salvar">
+                            <div class="col-xl-6">
+                                <input type="submit" name="confirmar" class="btn btn-primary btn-lg" value="Salvar">
+                                <a class="btn btn-danger btn-lg" href="visual.php">Cancelar</a>
                                 <p class="espaco"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <p class="text-sm-center text-monospace text-light">Ja sou cadastrado?</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <a class="btn btn-danger btn-md" href="index.php">Login</a>
                             </div>
                         </div>
 

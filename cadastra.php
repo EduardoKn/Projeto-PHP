@@ -1,6 +1,7 @@
 <?php
 
 include("classes/conexaobd.php");
+include("classes/checksessao.php");
 
 if (isset($_POST['confirmar'])) {
 
@@ -43,8 +44,6 @@ if (isset($_POST['confirmar'])) {
     }
     
     //Inserção no Banco e redirecionamento
-    
-    $senha = md5(md5($_SESSION[senha]));
    
     if(count($erro) == 0){
         
@@ -62,7 +61,7 @@ if (isset($_POST['confirmar'])) {
                 '$_SESSION[usuario]',
                 '$_SESSION[email]',
                 '$_SESSION[sexo]',
-                '$senha',
+                '$_SESSION[senha]',
                 '$_SESSION[niveldeacesso]'
                 )";
             $confirma = $conecta->query($sql_code) or die($mysqli->error);
@@ -76,7 +75,7 @@ if (isset($_POST['confirmar'])) {
                 $_SESSION[senha],
                 $_SESSION[niveldeacesso]);
                 
-                echo "<script> location.href='index.php'; </script>";
+                echo "<script> location.href='visual.php'; </script>";
             }else{
                 $erro[] = $confirma;
             }
@@ -176,19 +175,10 @@ $conecta->close();
                     </div>
 
                     <div class="row">
-                        <div class="col-xl-12">
-                            <input type="submit" name="confirmar" class="btn btn-primary btn-block btn-lg" value="Cadastrar">
+                        <div class="col-xl-6">
+                            <input type="submit" name="confirmar" class="btn btn-primary btn-lg" value="Cadastrar">
+                            <a class="btn btn-danger btn-lg" href="visual.php">Cancelar</a>
                             <p class="espaco"></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <p class="text-sm-center text-monospace text-light">Ja sou cadastrado?</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <a class="btn btn-danger btn-md" href="index.php">Login</a>
                         </div>
                     </div>
 

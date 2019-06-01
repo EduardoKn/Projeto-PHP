@@ -12,14 +12,24 @@ include("classes/conexaobd.php");
 $login = $_POST['usuario'];
 $lsenha = $_POST['senha'];
 
-$sql = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$lsenha' ";
+$sql_code = "SELECT * FROM usuario WHERE login= '$login' AND senha='$lsenha' AND niveldeacesso = 1";
+$sql_query = $conecta->query($sql_code) or die($conecta->error);
 
-$resultado = $conecta->query($sql);
-if ($resultado->num_rows > 0) {
+$sql_code2 = "SELECT * FROM usuario WHERE login= '$login' AND senha='$lsenha' AND niveldeacesso = 2";
+$sql_query2 = $conecta->query($sql_code2) or die($conecta->error);
+
+if ($sql_query->num_rows > 0) {
     $_SESSION['login'] = $login;
-    $_SESSION['senha'] = $lsenha;
-    header('location:mapa.php');
+    $_SESSION['senhac'] = $lsenha;
+    echo "<script>location.href='mapa.php'</script>";
+
+} else if ($sql_query2->num_rows > 0) {
+    $_SESSION['login'] = $login;
+    $_SESSION['senhac'] = $lsenha;
+    echo "<script>location.href='visual.php'</script>";
+    
 } else {
+    
     session_unset();
     session_destroy();
     echo "<script>"

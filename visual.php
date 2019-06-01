@@ -1,6 +1,7 @@
 <?php
 
     include("classes/conexaobd.php");
+    include ("classes/checksessao.php");
 
     $sql_code = "SELECT * FROM usuario";
     $sql_query = $conecta->query($sql_code) or die($conecta->error);
@@ -32,8 +33,12 @@
                 <div class="row">
                     <div class="col-xl-3">
                         <br>
-                        <a class="btn btn-primary" href="cadastra.php">Cadastrar usuario</a>
+                        <a class="btn btn-success" href="cadastra.php">New user</a>
+                        <a class="btn btn-primary" href="logout.php">Log out</a>
                         <p class="espaco"></p>
+                    </div>
+                    <div class="col-xl-3">
+                        
                     </div>
                 </div>
 
