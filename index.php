@@ -35,7 +35,7 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-xl-12">
                             <br>
-                            <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="Log in"> 
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" name="enviar" value="LOGAR"> 
                         </div>
                     </div>
 
